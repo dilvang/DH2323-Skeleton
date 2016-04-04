@@ -40,6 +40,8 @@ int main(int argc, char* argv[]) {
 }
 
 void Draw() {
+  sdlAux->clearPixels();
+
   for (int y = 0; y < SCREEN_HEIGHT; ++y) {
     for (int x = 0; x < SCREEN_WIDTH; ++x) {
       vec3 color(0.0, 0.0, 1.0);
