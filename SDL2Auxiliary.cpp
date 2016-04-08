@@ -95,7 +95,9 @@ bool SDL2Aux::createWindow() {
 bool SDL2Aux::createRenderer() {
   // Just pick any renderer available (providing no flags gives
   // priority to available hardware accelerated renderers.)
-  sdl_renderer = SDL_CreateRenderer(sdl_window, -1, 0);
+  sdl_renderer = SDL_CreateRenderer(sdl_window,
+                                    -1,
+                                    SDL_RENDERER_PRESENTVSYNC);
   if (sdl_renderer == NULL) {
     cout << "Could not create SDL renderer: " << SDL_GetError() << endl;
     return false;
