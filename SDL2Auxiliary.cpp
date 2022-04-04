@@ -1,5 +1,5 @@
 // TODO: Documentation!
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <iostream>
 #include <glm/glm.hpp>
 #include "SDL2Auxiliary.h"
