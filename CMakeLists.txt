@@ -12,16 +12,18 @@ add_executable(${PROJECT_NAME}
   )
 
 find_package (SDL2 REQUIRED)
-find_package (GLM REQUIRED)
+message(STATUS "Lib: ${SDL2_LIBRARIES} , Include: ${SDL2_INCLUDE_DIRS}")
 # find_package (OpenGL REQUIRED)  # You might have to use this instead
                                   # of GLM above.
 
 include_directories(
-  ${GLM_INCLUDE_DIRS}
+  ${SDL2_INCLUDE_DIRS}
+  ${CMAKE_SOURCE_DIR}/glm
+  ${CMAKE_SOURCE_DIR}
+)
   # ${OpenGL_INCLUDE_DIRS}  # You might have to use this instead of
                             # GLM above.
-  ${SDL2_INCLUDE_DIRS}
-  )
+
 
 target_link_libraries(${PROJECT_NAME}
   ${SDL2_LIBRARIES}
