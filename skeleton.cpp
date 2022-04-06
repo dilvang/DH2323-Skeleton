@@ -78,17 +78,24 @@ void Interpolate( vec3 a, vec3 b, vector<vec3>& result ){
 
 void Draw() {
   sdlAux->clearPixels();
-  vec3 topLeft(1,0,0); // red
-  vec3 topRight(0,0,1); // blue
-  vec3 bottomLeft(0,1,0); // green
-  vec3 bottomRight(1,1,0); // yellow
+  //vector<vec3> leftSide( SCREEN_HEIGHT );
+  //vector<vec3> rightSide( SCREEN_HEIGHT );
+  //Interpolate( topLeft, bottomLeft, leftSide );
+  //Interpolate( topRight, bottomRight, rightSide );
 
-  for (int y = 0; y < SCREEN_HEIGHT; ++y) {
+  for (int y = 0; y < SCREEN_HEIGHT; ++y) 
+  {
     for (int x = 0; x < SCREEN_WIDTH; ++x) {
+        //vec3 topLeft(1,0,0); // red
+        //vec3 topRight(0,0,1); // blue
+        //vec3 bottomLeft(0,1,0); // green
+        //vec3 bottomRight(1,1,0); // yellow
+
       vec3 color(0.0, 0.3, 0.7);
       sdlAux->putPixel(x, y, color);
+      
     }
+     sdlAux->render();
+  
   }
-
-  sdlAux->render();
 }
